@@ -23,10 +23,12 @@ export const getTags = query({
     if (!args.category) {
       return await ctx.db.query("tags").collect();
     }
-    
+
     // If category is provided, filter by category
-    return await ctx.db.query("tags")
-      .filter(q => q.eq(q.field("categorys"), args.category))
+    return await ctx.db
+      .query("tags")
+      .filter((q) => q.eq(q.field("categorys"), args.category))
+
       .collect();
   },
 });

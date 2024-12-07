@@ -61,8 +61,8 @@ export default function Sidebar() {
     gsap.to(".gsap-effect", {
       scrollTrigger: {
         trigger: ".gsap-effect",
-        start: "top top",
-        end: "+=100%",
+        start: "top 7%",
+        end: "+=1000%",
         scrub: true,
         pin: true,
         pinSpacing: false,

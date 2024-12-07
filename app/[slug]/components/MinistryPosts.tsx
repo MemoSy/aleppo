@@ -338,8 +338,8 @@ export default function MinistryPosts({ ministry }: any) {
                 />
               </div>
 
-              <div className="flex w-full md:w-[25%] gap-2 items-center justify-center">
-                <div className="flex items-center gap-2">
+              <div className="flex w-full  gap-2 items-center justify-between">
+                <div className="flex items-center gap-2 mr-28">
                   <input
                     type="checkbox"
                     checked={newComplaints.isPublic}
@@ -352,7 +352,7 @@ export default function MinistryPosts({ ministry }: any) {
                   />
                   <label>علني</label>
                 </div>
-                <Button type="submit" className="bg-red-500 text-white">
+                <Button type="submit" className="bg-red-400 text-white">
                   انشر الشكوى
                 </Button>
               </div>

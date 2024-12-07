@@ -49,6 +49,8 @@ export default function NewsGrid() {
     return <div>Loading...</div>;
   }
 
+  const sortedItems = items.sort((a, b) => b._creationTime - a._creationTime);
+
   function formatDate(timestamp: number): string {
     const date = new Date(timestamp);
     const day = date.getDate();
@@ -88,12 +90,12 @@ export default function NewsGrid() {
     reverseRoleTranslations[ministry] || ministry;
 
   return (
-    <div dir="ltr" className="w-full flex justify-between">
+    <div dir="ltr" className="w-full flex justify-between h-full">
       <Sidebar />
       <section dir="rtl" className="my-8 w-full px-3 md:w-[48%]">
         <h2 className="text-2xl font-bold mb-4 text-black">آخر الأخبار</h2>
         <div className="grid grid-cols-1 md:grid-cols-1 lg:grid-cols-1 gap-6">
-          {items.map((item, index) => (
+          {sortedItems.map((item, index) => (
             <div
               key={index}
               className="bg-white w-full shadow-md rounded-[20px] h-[266px]  overflow-auto transform transition-all duration-200 hover:scale-105"

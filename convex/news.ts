@@ -16,13 +16,23 @@ export const createNews = mutation({
 
 // Get current news (not older than 24 hours)
 export const getCurrentNews = query({
-  handler: async (ctx) => {
-    const twentyFourHoursAgo = Date.now() - 24 * 60 * 60 * 1000;
+  args: { category: v.optional(v.string()) }, // Make category optional
+  handler: async (ctx, args) => {
+    // If no category is provided, return all tags ordered by creation date
+    if (!args.category) {
+      return await ctx.db
+        .query("tags")
+        .withIndex("by_creation_time")
+        .order("asc")
+        .collect();
+    }
 
+    // If category is provided, filter by category and order by creation date
     return await ctx.db
-      .query("news")
-      
-      .filter((q) => q.gte(q.field("createdAt"), twentyFourHoursAgo))
+      .query("tags")
+      .filter((q) => q.eq(q.field("categorys"), args.category))
+      .withIndex("by_creation_time")
+      .order("asc")
       .collect();
   },
 });

@@ -25,8 +25,8 @@ export default function RightSidebar() {
     gsap.to(".foranything", {
       scrollTrigger: {
         trigger: ".foranything",
-        start: "top top",
-        end: "+=100%",
+        start: "top 7%",
+        end: "+=1000%",
         scrub: true,
         pin: true,
         pinSpacing: false,
@@ -39,7 +39,7 @@ export default function RightSidebar() {
     <>
       <div
         dir="rtl"
-        className="foranything h-[100vh] z-40 w-72 bg-white shadow-lg md:flex flex-col hidden"
+        className="foranything !right-[0px] h-[100vh] z-40 w-72 bg-white shadow-lg md:flex flex-col hidden"
       >
         <div className="flex justify-between items-center p-6">
           <h1 className="text-xl font-bold  text-black ">عدد الشكاوى</h1>

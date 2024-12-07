@@ -12,7 +12,7 @@ const users = [
   {
     name: "أ. أحمد الحلبي",
     role: "وزارة الأوقاف",
-    image: "/placeholder.svg?height=100&width=100",
+    image: "/person.jpg",
     number: "+352681573977",
   },
   {
@@ -30,25 +30,25 @@ const users = [
   {
     name: "د. حسين الخطيب",
     role: "وزارة الصحة ",
-    image: "/placeholder.svg?height=100&width=100",
+    image: "/8.webp?height=100&width=100",
     number: "+352681525206",
   },
   {
     name: "أ. أنس القاسم",
     role: "وزارة التربية والتعليم",
-    image: "/placeholder.svg?height=100&width=100",
+    image: "/5.webp?height=100&width=100",
     number: "+352681602098",
   },
   {
     name: "محمد ياسر غزال",
     role: "وزارة الإدارة المحلية",
-    image: "/placeholder.svg?height=100&width=100",
+    image: "/7.webp?height=100&width=100",
     number: "+352681121220",
   },
   {
     name: "أ. علي الأمين",
     role: "وزارة الإعلام",
-    image: "/placeholder.svg?height=100&width=100",
+    image: "/3.webp?height=100&width=100",
     number: "+306993345676",
   },
   {
@@ -60,13 +60,13 @@ const users = [
   {
     name: " م أحمد الكولان",
     role: "وزارة الزراعة",
-    image: "/placeholder.svg?height=100&width=100",
+    image: "/6.webp?height=100&width=100",
     number: "+352681588176",
   },
   {
     name: "أ. محمود بكور",
     role: "مديرية المصالح العقارية",
-    image: "/placeholder.svg?height=100&width=100",
+    image: "/4.webp?height=100&width=100",
     number: "+963939143624",
   },
   {
@@ -90,7 +90,7 @@ const users = [
   {
     name: "أ. طه عوض",
     role: "وزارة التنمية ",
-    image: "/placeholder.svg?height=100&width=100",
+    image: "/1.webp?height=100&width=100",
     number: "+963953453920",
   },
   {
@@ -102,7 +102,7 @@ const users = [
   {
     name: "أ. مضر عمر",
     role: "وزارة الاقتصاد ",
-    image: "/placeholder.svg?height=100&width=100",
+    image: "/2.webp?height=100&width=100",
     number: "+352681555445",
   },
 ];
@@ -169,7 +169,7 @@ export default function MinistryProfile({ ministry }: any) {
       className="flex flex-col items-center w-full md:w-[48%]"
       dir="rtl"
     >
-      <div className="relative rounded-t-xl w-[110%] h-64 bg-gradient-to-r from-blue-400 to-blue-600">
+      <div className="relative rounded-t-xl w-full md:w-[110%] h-64 bg-gradient-to-r from-blue-400 to-blue-600">
         <Image
           src="/bg.png"
           alt="Ministry Banner"
@@ -192,11 +192,12 @@ export default function MinistryProfile({ ministry }: any) {
               className="relative flex items-center gap-3"
             >
               <Image
-                src="/placeholder.svg"
+                // @ts-ignore
+                src={responsibleUser?.image}
                 alt="Ministry Logo"
-                width={65}
-                height={65}
-                className="rounded-full border-4 border-white shadow-lg"
+                width={100}
+                height={100}
+                className="rounded-full border border-white shadow-lg"
               />
               <h1 className="text-3xl font-bold mb-2 md:hidden flex">
                 {arabicMinistry}
@@ -223,7 +224,7 @@ export default function MinistryProfile({ ministry }: any) {
                 <p className="text-gray-600 mb-4 md:flex hidden">
                   {responsibleUser?.name}
                 </p>
-                <p className="text-white p-1.5 px-4 rounded-xl bg-red-400 flex gap-2 items-center">
+                <p className="text-white p-1.5 px-12 rounded-lg bg-red-400 flex gap-2 items-center">
                   عدد الشكاوى : <span> {getComplaintsCountByMinistry}</span>
                 </p>
               </div>

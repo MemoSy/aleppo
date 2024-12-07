@@ -3,7 +3,6 @@
 import * as React from "react";
 import ImmediateNewsBar from "./ImmediateNewsBar";
 
-
 export function HeroSection() {
   const [currentSlide, setCurrentSlide] = React.useState(0);
   const handleNextSlide = () => {
@@ -17,22 +16,7 @@ export function HeroSection() {
   }, []);
 
   return (
-    <div className="relative w-full flex justify-center items-center mb-[73px] z-10 bg-[url('/bgforhero.jpg')] bg-cover bg-[50%_50%] md:bg-center py-[390px]">
-      {/* Cloud background overlay */}
-      <div
-        className="absolute z-20 w-full h-full flex justify-center items-center "
-      >
-        {/* Hero content */}
-        <div className="text-center relative z-50 -translate-y-48 md:-translate-y-64 -translate-x-8">
-          <h1 className="text-4xl md:text-6xl font-bold text-gray-50 mb-4">
-            صوت حلب
-          </h1>
-          <p className="text-lg md:text-xl text-gray-300">
-          أنت تتكلم ... و المدينة تستجيب
-          </p>
-        </div>
-      </div>
-      {/* Content */}
+    <div className="relative w-full flex justify-center items-center mb-[73px] z-10 bg-[url('/bgforhero.jpg')] bg-cover bg-[48%_50%] md:bg-center py-[390px]">
       <div className="absolute -bottom-[73px] left-0  w-full bg-white p-5">
         {/* ImportantUsers Slider */}
         <div className="relative">
