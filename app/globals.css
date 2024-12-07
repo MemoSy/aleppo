@@ -1,0 +1,11 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+textarea {
+  line-height: 1.5; /* Adjust line-height as needed */
+  height: auto;
+  min-height: 2rem; /* Adjust min-height as needed */
+  max-height: 8rem; /* Adjust max-height as needed */
+  overflow-y: auto;
+}
