@@ -65,6 +65,7 @@ export default function DashboardPage() {
   const getTags = useQuery(api.tags.getTags);
   const deleteTag = useMutation(api.tags.deleteTag);
   const updateTag = useMutation(api.tags.updateTag);
+  // @ts-ignore
   const getNews = useQuery(api.news.getCurrentNews);
   const createNews = useMutation(api.news.createNews);
   const [newNews, setNewNews] = useState({ text: "" });
